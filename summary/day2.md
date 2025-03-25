@@ -76,3 +76,47 @@
 - Precision: 전체 시도 중 정답의 수 비율
 - Recall: 전체 정답 중 찾은 정답의 수 비율
 - RAGAS: RAG 평가 프레임워크
+
+## 4. Fine Tuning
+- 특정 태스크에 대해 특정 데이터셋을 추가로 학습시켜 해당 태스크에 대한 성능을 높이는 것
+- 반면에 general 태스크에서는 성능이 떨어짐
+- 모델의 사고 방식 자체를 바꾸는 것
+
+### Fine Tuning vs Prompt engineering
+- 파인 튜닝은 파라미터를 바꾸고, 프롬프트 엔지니어링은 바꾸지 않음
+  - 프롬프트가 길어져 사용 토큰 증가
+- 성능 향상의 폭이 파인 튜닝이 더 큼
+- many-shot(대량의 예시) 약 8천 개까지도 성능이 올라가므로, 파인 튜닝 전 many-shot을 수행해보고 이후에 고려하기
+  - many-shot에 대한 가능성의 예시가 있다면 이 쪽으로 fine tuning
+
+### Fine Tuning vs RAG
+- 성능은 둘 다 하는 게 더 좋음
+- RAG는 참고해서 답, Fine Tuning은 정보의 업데이트 후 답
+- 둘 중 어느 것이 더 성능 향상이 좋은지는 매번 다름
+
+### Transfer learning
+- 마지막 레이어 한 개만 튜닝
+  - 내가 알고 있는 여러 지식들 중 몇개를 하나로 링크하여 새로운 지식을 쌓는 방식
+
+### LoRA (Low Rank Adaptation)
+- low rank: 행렬의 행과 열 중 작은 사이즈로 변환
+- 튜닝해야 할 데이터가 작아짐
+- 풀 튜닝한 것보다 성능이 더 높아질 수 있음 (대부분 fine tuning 시 사용 중)
+- QLoRA (Quantized)
+  - LoRA 후 양자화하여 더 작게
+- 최근에는 DoRA라는 것도 나옴
+  - 이외 여러가지가 나오고 있지만 매일 팔로우하지 말고, 널리 쓰이고 이미 검증된 사용하기 좋은 기술을 쓰
+
+### Fine Tuning - Supervised / Reinforcement Learning
+- 최근에는 휴먼 피드백보다 AI 피드백을 사용
+- PPO(Proximal Preference Optimization): 리워드 모델을 통해 리워드를 제공하고 학습
+- DPO(Direct Preference Optimization): 사람이 직접 리워드?
+- GRPO(Guided Reward Policy Optimization): KL 다이버전스를 통해 사람의 산포를 모델의 산포와 비교하면서 흉내내도록 학습
+
+### Dataset
+- fine tuning의 가장 큰 비용은 좋은 데이터 준비하기
+- high quality data: 더 배우기 쉬운 데이터(자세한 설명 등)
+
+### OpenAI Fine Tuning Tool
+- OpenAI에서 몇개의 예시만으로 파인 튜닝 가능
+- 일단 멀티샷으로 테스트 후 좋아진다면 파인 튜닝 진행하기
