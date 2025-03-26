@@ -65,3 +65,28 @@
 - assistant(일반적인 도움) -> agent(자기주도성)
 
 ## 7. MultiModal / Productivity
+
+### MultiModal Model
+- 텍스트, 이미지, 영상, 오디오 등 여러 입력을 받아 처리하는 모델
+- 여러 입력 유형을 학습하면 결국 language 자체에 대한 이해도가 올라감
+
+### Apple Ferret UI
+- iOS단에서 AI가 버튼을 클릭할 수 있도록 만드는 AI
+- 모든 앱을 AI가 사용할 수 있고, 멀티모달까지 들어가면 더욱 사용성이 좋아짐
+- AI 사용이 늘어나면서 유저 친화적보다는 AI 친화적인 UI가 더 중요해질 수도 있음
+
+### Stable diffusion
+- 하나 우선 생성 후 에러나 어색한 부분을 고쳐가는 방식
+- 이미지 생성 모델 중 가장 많이 쓰이는 U Net 구조에서 Transformer로 대체하고 있음
+
+### Video Generation
+- [road-to-SORA](https://www.oxen.ai/blog/road-to-sora-reading-list)
+
+### Productivity
+- Cursor, Github Copilot 꼭 써보기
+- Continue라는 로컬 모델도 있음
+
+### AI 공부 방법
+- 안드레 카파시 등 유명 AI 인플루언서 구독
+- 개인 및 기관(빅테크 기술 블로그 등)의 repo, blog, X, 링크드인 구독
+- ethan mollick, philipp schmid
