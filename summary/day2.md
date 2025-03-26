@@ -1,4 +1,4 @@
-# Day2. RAG, Fine Tuning, Evaluation
+# Day2. RAG, Fine Tuning
 
 ## 3. RAG (Retrieval Augmented Generation)
 일종의 프롬프트 엔지니어링
